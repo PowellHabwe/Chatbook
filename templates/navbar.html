@@ -102,7 +102,7 @@
     </nav>
   </div>
 </header> {% endcomment %}
-} {% load static %}
+{% load static %}
 <header
   style="
     width: 100%;
@@ -218,28 +218,7 @@
             class="fa-solid fa-house"
           ></i
         ></a>
-        <i
-          style="
-            font-size: 20px;
-            background: transparent;
-            padding: 10px;
-            border-radius: 10px;
-            color: #769bcb;
-            transition: 0.4s;
-          "
-          class="fa-regular fa-message"
-        ></i>
-        <i
-          style="
-            font-size: 20px;
-            background: transparent;
-            padding: 10px;
-            border-radius: 10px;
-            color: #769bcb;
-            transition: 0.4s;
-          "
-          class="fa-solid fa-video"
-        ></i>
+
       </div>
       <div
         style="
@@ -251,34 +230,18 @@
         "
         class="iconBox2"
       >
-        <i
-          style="
-            font-size: 20px;
-            background: transparent;
-            padding: 10px;
-            border-radius: 10px;
-            color: #769bcb;
-            transition: 0.4s;
-          "
-          class="fa-solid fa-circle-plus"
-        ></i>
-        <i
-          style="
-            font-size: 20px;
-            background: transparent;
-            padding: 10px;
-            border-radius: 10px;
-            color: #1b1b29;
-            transition: 0.4s;
-          "
-          class="fa-solid fa-bell"
-        ></i>
         {% if request.user.is_authenticated %}
         <a href="{% url 'update-user' %}">
         <p style="color: white;    display: flex;
         align-items: center;
         justify-content: center;margin-top:5px;"><span>@{{ request.user.username }}</span></p>
         </a>
+
+        <a href="{% url 'logout' %}">
+          <p style="color: white;    display: flex;
+          align-items: center;
+          justify-content: center;margin-top:5px;"><span>Logout</span></p>
+          </a>
         {% else %}
         <p><a href="{% url 'login' %}">Log In </a></p>
         {% endif %}

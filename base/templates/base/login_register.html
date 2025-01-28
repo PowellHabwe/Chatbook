@@ -74,7 +74,14 @@
               <p>Password should be more than 9 characters long</p>
               <p>Password should contain numeric and uppercase letters</p>
               <p>Password characters should be diffent than the username</p>
-              {% comment %} <p>Password should be more than 8 characters long</p> {% endcomment %}
+
+              {% if form.errors %}
+              <div class="form__errors" style="color: red;">
+                {% for field, errors in form.errors.items %}
+                  <p class="error">Error : {{ field }}: {{ errors|join:", " }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
 
               {% for field in form %}
               <div class="form__group form__group">
