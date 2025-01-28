@@ -52,4 +52,5 @@ Run the Server:
 # Start the development server:
 
 python manage.py runserver  
+
 With ChatBook, users can stay connected, express themselves, and have fun—all in one platform!
